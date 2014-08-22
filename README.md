@@ -145,6 +145,24 @@ $ shp2pgsql tl_2014_us_zcta510 | psql
 );
 ```
 
+#### Bonus: Canadian Postal Codes
+
+- Download the postal codes from Geocoder.ca (http://geocoder.ca/?freedata=1)
+
+We only need the first 3 columns, postal code, latitude and longitude, so cut these to output.csv.
+
+```
+$ wget http://geocoder.ca/onetimedownload/Canada.csv.gz
+$ gzip -d Canada.csv.gz
+$ cut -f 1,2,3 -d , Canada.csv > output.csv
+```
+
+- Import into the database
+
+```
+> COPY zip from 'output.csv’ DELIMITER ',' CSV;
+```
+
 #### Start the API
 
 ```
