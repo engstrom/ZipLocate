@@ -30,7 +30,9 @@ $ pip install -r requirements.txt
 
 #### Download ZCTA5 data
 
-ZCTA5 is an approximation of zip code polygons based on US census data. Currently, as of 2014 (502M):
+ZCTA5 is an approximation of zip code polygons based on US census data.
+
+Currently, as of 2014 (502M):
 
 [ftp://ftp2.census.gov/geo/tiger/TIGER2014/ZCTA5/tl_2014_us_zcta510.zip](ftp://ftp2.census.gov/geo/tiger/TIGER2014/ZCTA5/tl_2014_us_zcta510.zip)
 
@@ -50,7 +52,7 @@ $ pip install Fiona
 $ pip install Shapely
 ```
 
-- Extract and import the data
+- Extract and import the ZCTA5 data
 
 ```
 $ unzip tl_2014_us_zcta510.zip
@@ -61,11 +63,11 @@ Import process takes a few minutes to complete.
 
 #### Advanced zip code centroid approximation
 
-For a more useful approximation of the center of zip code polygons, we can use population data to estimate the density and weight the center point location. This is considerable more complicated, if basic approximation is enough for you, you can skip this.
+For a more useful approximation of the center of zip code polygons, we can use population data to estimate population density and weight the center point around centers of population. This is considerable more complicated, if basic approximation is enough for you, you can skip this.
 
 - Install Postgres and PostGIS (tutorials available online)
 
-- Grab the block level population centers from the latest US Census.
+- Grab block level population centers from the latest US Census
 
 Available here: [https://www.census.gov/geo/reference/centersofpop.html](https://www.census.gov/geo/reference/centersofpop.html). Block level is the highest granularity available.
 
@@ -89,13 +91,15 @@ $ wget https://www.census.gov/geo/reference/docs/cenpop2010/blkgrp/CenPop2010_Me
 > CREATE INDEX point_idx ON centers USING GIST(point);
 ```
 
-- Import ZCTA5 data to Postgres
+- Extract and import the ZCTA5 data
 
 ```
+$ unzip tl_2014_us_zcta510.zip
 $ shp2pgsql tl_2014_us_zcta510 | psql
 ```
 
 ```
+> AddGeometryColumn('tl_2014_us_zcta510', 'center', 4326, 'POINT', 2);
 > UpdateGeometrySRID('tl_2014_us_zcta510', 'geom', 4326);
 > CREATE INDEX zcta5_idx ON tl_2014_us_zcta510 USING GIST(geom);
 ```
