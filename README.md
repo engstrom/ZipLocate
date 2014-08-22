@@ -147,7 +147,7 @@ $ shp2pgsql tl_2014_us_zcta510 | psql
 
 #### Bonus: Canadian Postal Codes
 
-- Download the postal codes from Geocoder.ca (http://geocoder.ca/?freedata=1)
+- Download the postal codes from [Geocoder.ca](http://geocoder.ca/?freedata=1) and donate to their [legal defense fund](geocoder.ca/?sued=1) (currently being sued because they provide an open alternative to the expensive Canada Post database).
 
 We only need the first 3 columns, postal code, latitude and longitude, so cut these to output.csv.
 
