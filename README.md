@@ -1,6 +1,6 @@
 ### ZipLocate
 
-An API for geolocating zip codes, available at [ziplocate.us](http://ziplocate.us/).
+An API for zip code geolocation, available at [ziplocate.us](http://ziplocate.us/).
 
 #### Setting up the self-hosted version of the API:
 
