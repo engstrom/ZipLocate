@@ -173,3 +173,9 @@ $ python cli.py
 - Test a zip code query
 
 [http://127.0.0.1:5000/api/v1/80301](http://127.0.0.1:5000/api/v1/80301)
+
+### Clients
+
+iOS: https://github.com/jPaolantonio/ZipLocateiOS
+PHP: https://github.com/ins0/php-simple-ziplocate
+Go: https://github.com/kureikain/go-ziplocate
