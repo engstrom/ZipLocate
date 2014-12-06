@@ -176,6 +176,6 @@ $ python cli.py
 
 ### Clients
 
-iOS: https://github.com/jPaolantonio/ZipLocateiOS
-PHP: https://github.com/ins0/php-simple-ziplocate
-Go: https://github.com/kureikain/go-ziplocate
+- __iOS__: https://github.com/jPaolantonio/ZipLocateiOS
+- __PHP__: https://github.com/ins0/php-simple-ziplocate
+- __Go__: https://github.com/kureikain/go-ziplocate
