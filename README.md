@@ -72,7 +72,7 @@ For a more useful approximation of the center of zip code polygons, we can use p
 Available here: [https://www.census.gov/geo/reference/centersofpop.html](https://www.census.gov/geo/reference/centersofpop.html). Block level is the highest granularity available.
 
 ```
-$ wget https://www.census.gov/geo/reference/docs/cenpop2010/blkgrp/CenPop2010_Mean_BG.txt
+$ wget http://www2.census.gov/geo/docs/reference/cenpop2010/blkgrp/CenPop2010_Mean_BG.txt
 ```
 
 - Create a georeferenced table in Postgres and copy the CSV in:
