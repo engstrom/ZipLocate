@@ -179,3 +179,8 @@ $ python cli.py
 - __iOS__: https://github.com/jPaolantonio/ZipLocateiOS
 - __PHP__: https://github.com/ins0/php-simple-ziplocate
 - __Go__: https://github.com/kureikain/go-ziplocate
+
+### Download Data
+
+The [data](data/) directory contains tables of ZCTA centroids derived from the
+above instructions in CSV format.
